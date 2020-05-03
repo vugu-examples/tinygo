@@ -15,8 +15,9 @@ func main() {
 
 	wc := devutil.MustNewTinygoCompiler().SetDir(".")
 
-	wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash")
+	// wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash")
 	// wc.AddPkgReplace("github.com/vugu/vugu", "../vugu")
+	wc.AddGoGet("go get -u -x github.com/vugu/vugu github.com/vugu/vjson")
 
 	mux := devutil.NewMux()
 	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
