@@ -1,2 +1,2 @@
 # tinygo
-Vugu+Tinygo example
+Vugu+Tinygo example (WIP)
