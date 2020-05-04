@@ -14,6 +14,10 @@ func main() {
 	log.Printf("Starting HTTP Server at %q", l)
 
 	wc := devutil.MustNewTinygoCompiler().SetDir(".")
+	defer wc.Close()
+
+	wc.NoDocker()
+	// wc.SetTinygoArgs("-no-debug")
 
 	// wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash")
 	// wc.AddPkgReplace("github.com/vugu/vugu", "../vugu")
