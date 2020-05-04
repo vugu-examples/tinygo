@@ -8,7 +8,9 @@
                 written in
                 <a @click='event.PreventDefault();c.ShowGo=!c.ShowGo' href="https://golang.org/">Go</a>
                 using
-                <a @click='event.PreventDefault();c.ShowVugu=!c.ShowVugu' href="https://vugu.org/">Vugu</a>.
+                <a @click='event.PreventDefault();c.ShowVugu=!c.ShowVugu' href="https://vugu.org/">Vugu</a>
+                and built with 
+                <a @click='event.PreventDefault();c.ShowTinygo=!c.ShowTinygo' href="https://tinygo.org/">Tinygo</a>.
             </p>
 
             <div vg-if='c.ShowWasm' class="alert alert-primary" role="alert">
@@ -43,9 +45,10 @@
 import "time"
 
 type Root struct {
-    ShowWasm bool `vugu:"data"`
-    ShowGo bool   `vugu:"data"`
-    ShowVugu bool `vugu:"data"`
+    ShowWasm bool   `vugu:"data"`
+    ShowGo bool     `vugu:"data"`
+    ShowVugu bool   `vugu:"data"`
+    ShowTinygo bool `vugu:"data"`
 }
     
 </script>

@@ -17,14 +17,14 @@ func main() {
 	defer wc.Close()
 
 	wc.NoDocker()
-	// wc.SetTinygoArgs("-no-debug")
+	wc.SetTinygoArgs("-no-debug")
 
 	// wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash")
 	// wc.AddPkgReplace("github.com/vugu/vugu", "../vugu")
 	wc.AddGoGet("go get -u -x github.com/vugu/vugu github.com/vugu/vjson")
 
 	mux := devutil.NewMux()
-	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
+	mux.Match(devutil.NoFileExt, devutil.DefaultIndex.Replace(
 		`<!-- styles -->`,
 		`<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">`))
 	mux.Exact("/main.wasm", devutil.NewMainWasmHandler(wc))
