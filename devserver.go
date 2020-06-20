@@ -16,12 +16,12 @@ func main() {
 	wc := devutil.MustNewTinygoCompiler().SetDir(".")
 	defer wc.Close()
 
-	wc.NoDocker()
-	wc.SetTinygoArgs("-no-debug")
+	// wc.NoDocker() // uncomment to use locally installed tinygo
+	// wc.SetTinygoArgs("-no-debug") // remove debug info for even smaller file size
 
-	// wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash")
-	// wc.AddPkgReplace("github.com/vugu/vugu", "../vugu")
-	wc.AddGoGet("go get -u -x github.com/vugu/vugu github.com/vugu/vjson")
+	// wc.AddGoGet("go get -u -x github.com/vugu/vjson github.com/vugu/html github.com/vugu/xxhash") // if not using docker, you'll need this
+	// wc.AddPkgReplace("github.com/vugu/vugu", "../vugu") // maintainer-only
+	wc.AddGoGet("go get -u -x github.com/vugu/vugu github.com/vugu/vjson") // third party packages must have `go get` run on them for tinygo to compile (for now)
 
 	mux := devutil.NewMux()
 	mux.Match(devutil.NoFileExt, devutil.DefaultIndex.Replace(

@@ -10,7 +10,7 @@
                 using
                 <a @click='event.PreventDefault();c.ShowVugu=!c.ShowVugu' href="https://vugu.org/">Vugu</a>
                 and built with 
-                <a @click='event.PreventDefault();c.ShowTinygo=!c.ShowTinygo' href="https://tinygo.org/">Tinygo</a>.
+                <a @click='event.PreventDefault();c.ShowTinygo=!c.ShowTinygo' href="https://tinygo.org/">TinyGo</a>.
             </p>
 
             <div vg-if='c.ShowWasm' class="alert alert-primary" role="alert">
@@ -33,6 +33,12 @@
                 from Go to web application UI development and prefers idiomatic solutions over
                 techniques that follow patterns from JavaScript wherever possible.
                 <a target="_blank" href="https://vugu.org/">Read more at vugu.org &raquo;</a>
+            </div>
+
+            <div vg-if='c.ShowTinygo' class="alert alert-primary" role="alert">
+                <strong>TinyGo</strong> is a project to bring the Go programming language to microcontrollers and modern web browsers by creating a new compiler based on LLVM.
+                TinyGo can be used to produce WebAssembly (WASM) code which is very compact in size.
+                <a target="_blank" href="https://tinygo.org/">Read more at tinygo.org &raquo;</a>
             </div>
 
         </div>
