@@ -1,5 +1,5 @@
 # tinygo
-Vugu+Tinygo (via Docker) example (WIP)
+Vugu+Tinygo example
 
 Run with:
 
